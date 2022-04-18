@@ -1,0 +1,23 @@
+{
+  "main": "index.ts",
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "spotify-web-api-node": "^5.0.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.24",
+    "@types/spotify-web-api-node": "^5.0.7",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "serve": "ts-node-dev ./index.ts",
+    "start": "concurrently \"yarn serve\" \"cd ../client && yarn start\"",
+    "setup": "concurrently \"yarn install\" \"cd ../client && yarn install\""
+  }
+}
