@@ -4,7 +4,7 @@
 
 npm install -g concurrently
 
-In the server directory, you can run:
+## `In the server directory, you can run:`
 
 ### `yarn setup (Requires Concurrently)`
 
