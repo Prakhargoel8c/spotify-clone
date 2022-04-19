@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { RoundButton } from '../../components/Button';
+import { RoundButton } from '../Button';
 
 const SectionTitle = styled.h4({
   textAlign: 'left',

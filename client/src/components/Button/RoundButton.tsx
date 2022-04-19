@@ -7,7 +7,7 @@ const RoundButton = styled(Button)({
   borderRadius: '20px',
   margin: '1% 0%',
   fontWeight: '500',
-  '&:hover': { backgroundColor: 'black' },
+  '&:hover': { backgroundColor: 'black', color: 'white' },
 });
 
 export default RoundButton;

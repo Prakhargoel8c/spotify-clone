@@ -22,9 +22,9 @@ const HomePage = () => {
   useEffect(loadPageData, [cancelTokenSource, dispatch]);
   return (
     <>
-      <CarouselSection data={albums} title="Released This Week" sectionLink="" />
-      <CarouselSection data={featuredPlayLists} title="Featured Playlists" sectionLink="" />
-      <TextSection data={genres} title="Browse genres" sectionLink="" />
+      <CarouselSection data={albums} title="Released This Week" sectionLink="/new-this-week" />
+      <CarouselSection data={featuredPlayLists} title="Featured Playlists" sectionLink="/featured-playlists" />
+      <TextSection data={genres} title="Browse genres" sectionLink="/browse-genres" />
     </>
   );
 };

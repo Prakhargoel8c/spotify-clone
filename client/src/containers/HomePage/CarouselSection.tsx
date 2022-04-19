@@ -2,7 +2,7 @@ import React from 'react';
 import { TrackCard } from '../../components/Card';
 import { TrackCarosel } from '../../components/Carousel';
 import { Album } from '../../types/Album';
-import SectionHeader from './SectionHeader';
+import { SectionHeader } from '../../components/SectionHeader';
 
 export interface ICarouselSection {
   data: Album[];

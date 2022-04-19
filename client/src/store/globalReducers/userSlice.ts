@@ -4,6 +4,8 @@ import { login, refreshToken } from '../../api/User';
 import { UserToken } from '../../types/User';
 import { RootState } from '../store';
 
+const userTokenKey = 'userToken';
+
 export interface UserState {
   isAuthenticated: Boolean;
   authenticationStatus: 'idle' | 'loading' | 'failed';
@@ -11,22 +13,22 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  isAuthenticated: false,
+  isAuthenticated: sessionStorage.getItem(userTokenKey) ? true : false,
   authenticationStatus: 'idle',
+  userToken: sessionStorage.userToken ? JSON.parse(sessionStorage.userToken) : undefined,
 };
 
-export const loginAsync = createAsyncThunk<UserToken, { code: string; cancelToken: CancelToken }>(
-  'user/LOGIN',
-  async ({ code, cancelToken }, { getState }) => {
-    const response = await login(code, cancelToken);
-    return response.data;
-  }
-);
+export const loginAsync = createAsyncThunk<UserToken, { code: string; cancelToken: CancelToken }>('user/LOGIN', async ({ code, cancelToken }) => {
+  const response = await login(code, cancelToken);
+  sessionStorage.setItem(userTokenKey, JSON.stringify(response.data));
+  return response.data;
+});
 
 export const refreshTokenAsync = createAsyncThunk<UserToken, { token: string; cancelToken: CancelToken }>(
   'user/REFRSH_TOKEN',
   async ({ token, cancelToken }) => {
     const response = await refreshToken(token, cancelToken);
+    sessionStorage.setItem(userTokenKey, JSON.stringify(response.data));
     return response.data;
   }
 );

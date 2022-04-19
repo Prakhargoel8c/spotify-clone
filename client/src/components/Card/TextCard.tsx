@@ -8,7 +8,7 @@ const TextCardStyled = styled(Card)({
   color: 'white',
   backgroundColor: '#0C0C0C',
   textAlign: 'center',
-  margin: '2%',
+  margin: '1%',
 });
 
 const TrackCardContentStyled = styled(CardContent)({ backgroundColor: '#0C0C0C' });

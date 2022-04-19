@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { TextCard } from '../../components/Card';
-import SectionHeader from './SectionHeader';
+import { SectionHeader } from '../../components/SectionHeader';
 
-const TextSectionContainer = styled.div({ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' });
+const TextSectionContainer = styled.div({ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', margin: 'max(10px,(2% 5%))' });
 
 export interface ITextSection {
   data: string[];

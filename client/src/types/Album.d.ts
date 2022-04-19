@@ -1,4 +1,4 @@
-export interface PagedAlbumsList {
+export interface PagedAlbumsResponse {
   items: PagedAlbum[];
   total: number;
 }
@@ -21,4 +21,9 @@ export interface Album {
   id: string;
   title: string;
   image: string;
+}
+
+export interface PagedAlbums {
+  items: Album[];
+  total: number;
 }
